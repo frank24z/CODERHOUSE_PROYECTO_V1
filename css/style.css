@@ -41,7 +41,7 @@ main .banner-home .banner-texts {
   justify-content: space-between;
 }
 main .banner-home .banner-texts p {
-  color: #040506;
+  color: #000000;
   text-shadow: rgba(0, 0, 0, 0.5);
   font-weight: bold;
   margin: 0;
