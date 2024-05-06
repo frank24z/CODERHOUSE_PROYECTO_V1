@@ -9,6 +9,9 @@ body {
 header .nav-link {
   color: #666464;
 }
+header .navbar-nav {
+  align-items: center;
+}
 
 main {
   display: grid;
@@ -56,6 +59,9 @@ main .banner-home .banner-texts .text1 {
 main .banner-home .banner-texts .text2 {
   align-self: self-end;
 }
+main .img-history {
+  width: 100%;
+}
 
 .section1 {
   display: flex;
@@ -91,6 +97,11 @@ footer {
   .banner-texts p {
     font-size: 1rem;
   }
+  .img-history {
+    height: 300px;
+    object-fit: cover;
+    object-position: 100% 40%;
+  }
 }
 /* media queries desktop*/
 @media screen and (min-width: 1024px) {
@@ -99,6 +110,11 @@ footer {
   }
   .banner-texts p {
     font-size: 3rem;
+  }
+  .img-history {
+    height: 500px;
+    object-fit: cover;
+    object-position: 100% 40%;
   }
 }
 
