@@ -2,18 +2,20 @@
 // Ruta /scss/styles.scss
 
 // PAGE HOME
-
 @import "utilities/variables";
+@import "utilities/marcas";
+@import "utilities/mixin";
+
 
 body {
     background-color: $background-color;
     color: $text-color;
     font-family: $fonts;
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 10;
 }
 
-// Directamente en bootstrap
+// directamente en bootstrap
 header {
     .nav-link {
         color: $text-color;
@@ -23,7 +25,6 @@ header {
         align-items: center;
     }
 }
-
 
 main {
     display: grid;
@@ -80,14 +81,13 @@ main {
         }
     }
 
-    //PAGE HISTORIA
+    //page history
     .img-history {
         width: 100%;
-        //height: auto;
     }
 }
- 
-//LINK TIPO BOTON HOME
+
+//boton page home
 .section1 {
     display: flex;
     flex-direction: column;
@@ -126,7 +126,7 @@ footer {
         font-size: 1rem;
     }
 
-    //PAGE HISTORY
+    //page history
     .img-history {
         height: 300px;
         object-fit: cover;
@@ -144,7 +144,7 @@ footer {
         font-size: 3rem;
     }
 
-    //PAGE HISTORY
+    //page history
     .img-history {
         height: 500px;
         object-fit: cover;

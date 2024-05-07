@@ -1,0 +1,7 @@
+// ruta /scss/_marcas.scss
+
+@import "mixin";
+
+.marcas .marca {
+    @include flex-para-marcas;
+}

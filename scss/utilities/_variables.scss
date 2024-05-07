@@ -1,6 +1,6 @@
-// Ruta /scss/utilities/_variables.scss
+// ruta /scss/utilities/_variables.scss
 
-// Mis colores 
+// mis colores 
 $background-color: #ffffff;
 $background-color-footer: #f1e8e8;
 $text-color: #666464;
@@ -11,9 +11,10 @@ $button-background-color: #17415e;
 $button-text-color: #FFFFFF;
 
 
-// Mis letras
+
+// mis letras
 $fonts: Arial, sans-serif;
 
-// Usar Media Query pantallas medianas y desktop
-$mq-moviles: 300px;
-$mq-desktop: 1024px;
+// usar media query pantallas medianas y desktop
+$mq-moviles: 500px;
+$mq-desktop: 720px;

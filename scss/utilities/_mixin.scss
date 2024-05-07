@@ -1,0 +1,60 @@
+// ruta /scss/_mixin.scss
+
+@import "variables";
+
+//mixin para page marcas
+@mixin flex-para-marcas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  
+    img {
+        width: 100%;
+        max-width: 100%; 
+        flex: 0 1 auto;
+        margin: 20px; 
+   
+    }
+
+    .info-marca {
+      display: block;
+  
+      .marca-nombre{
+        font-weight: bold;
+      }
+      .marca-nombre, .resto {
+          display: block;
+          margin: 5px 0;
+      }
+  
+      .fundador-creador {
+          display: flex;
+          align-items: baseline;
+          margin: 5px 0;
+
+  
+          .creador {
+              margin-left: 5px;
+              font-style: italic;
+          }
+      }
+  }
+
+    // media query desde desktop
+    @media (min-width: $mq-desktop) {
+        flex-direction: row;
+        align-items: flex-start; 
+
+        img {
+            width: auto;
+            max-width: 50%; 
+            margin-right: 20px;
+        }
+
+        .info-marca {
+            flex-grow: 1;
+            width: 50%; 
+            margin: 20px;
+        }
+    }
+}
