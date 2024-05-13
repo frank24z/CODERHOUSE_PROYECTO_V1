@@ -34,8 +34,8 @@ main {
     }
 
     p {
-        margin: 10px;
-        padding: 10px;
+        margin: 3px;
+        padding: 3px;
     }
 
     .banner-home {
@@ -155,8 +155,9 @@ footer {
 }
 
 // estilos para page nosotros
-
-
+.img-nosotros {
+    @include grid-para-nosotros;
+}
 
 // estilos para page contacto
 
