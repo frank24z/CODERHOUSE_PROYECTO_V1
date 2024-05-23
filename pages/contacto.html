@@ -44,32 +44,49 @@
         </nav>
     </header>
     <main>
-        <h1>Contáctenos</h1>
-        <p>
-            En RUEDAS DEL TIEMPO, creemos firmemente en la colaboración y el intercambio de conocimientos. Nuestra
-            pasión por la historia automotriz y sus innovaciones se enriquece con cada nueva perspectiva y cada pieza de
-            información que nuestros lectores aportan. Si tienes datos interesantes, historias, correcciones o cualquier
-            contenido relacionado con el mundo del automóvil que te gustaría compartir, ¡nos encantaría escuchar de ti!
-        </p>
+        <div class="container">
+            <h1>Contáctenos</h1>
+            <p>
+                En RUEDAS DEL TIEMPO, creemos firmemente en la colaboración y el intercambio de conocimientos. Nuestra
+                pasión por la historia automotriz y sus innovaciones se enriquece con cada nueva perspectiva y cada pieza de
+                información que nuestros lectores aportan. Si tienes datos interesantes, historias, correcciones o cualquier
+                contenido relacionado con el mundo del automóvil que te gustaría compartir, ¡nos encantaría escuchar de ti!
+            </p>
+            <section>
+                <h2>¿Cómo puedes contribuir?</h2>
+                <p>
+                    Compartiendo tu historia: ¿Tienes anécdotas personales relacionadas con automóviles clásicos o modernos?
+                    ¿Experiencias únicas en viajes o eventos automovilísticos?
+                    Aportando conocimiento: ¿Información sobre modelos específicos, innovaciones tecnológicas o figuras
+                    históricas en la industria automotriz que crees que deberíamos cubrir?
+                    Sugerencias de contenido: ¿Hay algún tema o área que te gustaría que exploráramos más a fondo?
+                </p>
+            </section>
+            <section class="form-contacto">
+                <h2>Formulario de contacto</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Asunto:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </div>
     </main>
-    <section>
-        <h2>¿Cómo puedes contribuir?</h2>
-        <p>
-            Compartiendo tu historia: ¿Tienes anécdotas personales relacionadas con automóviles clásicos o modernos?
-            ¿Experiencias únicas en viajes o eventos automovilísticos?
-            Aportando conocimiento: ¿Información sobre modelos específicos, innovaciones tecnológicas o figuras
-            históricas en la industria automotriz que crees que deberíamos cubrir?
-            Sugerencias de contenido: ¿Hay algún tema o área que te gustaría que exploráramos más a fondo?
-        </p>
-    </section>
-    <section>
-        <h2>Formulario de contacto</h2>
-        <p>Nombre:</p>
-        <p>Asunto:</p>
-        <p>Mensaje:</p>
-    </section>
     <footer>
-        <p>COMUNIDAD CHILENA AFICIONADA AL MUNDO AUTOMOTRIZ</p>
         <p>ENTRENAMIENTO CODERHOUSE 2024</p>
     </footer>
     <!-- script javascript -->
@@ -77,3 +94,4 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
+</html>

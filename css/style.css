@@ -2,8 +2,14 @@ body {
   background-color: #ffffff;
   color: #666464;
   font-family: Arial, sans-serif;
-  margin: 10;
-  padding: 10;
+}
+
+img {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 header .nav-link {
@@ -16,15 +22,22 @@ header .navbar-nav {
 main {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 5px;
 }
 main h1 {
   text-align: center;
   font-weight: bold;
+  margin: 5px;
+}
+main h2 {
+  font-size: 1.2rem;
+  text-align: start;
+  font-weight: bold;
+  margin: 5px;
 }
 main p {
-  margin: 3px;
-  padding: 3px;
+  margin: 5px;
+  padding: 5px;
 }
 main .banner-home {
   position: relative;
@@ -43,12 +56,29 @@ main .banner-home .banner-texts {
   flex-direction: column;
   justify-content: space-between;
 }
+main .banner-home .banner-texts h1 {
+  color: #000000;
+  text-shadow: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  margin: 10;
+  padding: 10;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+main .banner-home .banner-texts h1:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
 main .banner-home .banner-texts p {
   color: #000000;
   text-shadow: rgba(0, 0, 0, 0.5);
   font-weight: bold;
-  margin: 0;
-  padding: 0;
+  margin: 5px;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+main .banner-home .banner-texts p:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
 }
 main .banner-home .banner-texts .text0 {
   align-self: center;
@@ -58,9 +88,6 @@ main .banner-home .banner-texts .text1 {
 }
 main .banner-home .banner-texts .text2 {
   align-self: self-end;
-}
-main .img-history {
-  width: 100%;
 }
 
 .section1 {
@@ -80,43 +107,91 @@ main .img-history {
   cursor: pointer;
   display: inline-block;
   text-align: center;
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+.section1 .button-history:hover {
+  background-color: #0d2535;
+  box-shadow: 8px 8px 16px rgba(255, 0, 0, 0.2);
 }
 
 footer {
   background-color: #f1e8e8;
-  padding: 10px;
+  padding: 5px;
+  margin: auto;
   text-align: center;
+  align-items: center;
   color: #333333;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
-/* media queries moviles y tablet*/
+/* mq moviles y tablet*/
 @media screen and (min-width: 300px) {
   .navbar-nav .nav-link,
   .banner-texts p {
     font-size: 1rem;
   }
-  .img-history {
-    height: 300px;
+  .banner-texts h1 {
+    font-size: 1rem;
+  }
+  .banner-home img {
+    height: 50px;
     object-fit: cover;
-    object-position: 100% 40%;
+    object-position: center;
   }
 }
-/* media queries desktop*/
+/* mq desktop*/
 @media screen and (min-width: 1024px) {
   .navbar-nav .nav-link {
     font-size: 1.3rem;
   }
   .banner-texts p {
-    font-size: 3rem;
+    font-size: 2rem;
   }
-  .img-history {
-    height: 500px;
+  .banner-texts h1 {
+    font-size: 2rem;
+  }
+  .banner-home img {
+    height: 400px;
     object-fit: cover;
-    object-position: 100% 40%;
+    object-position: center;
   }
 }
+.timeline-container .timeline-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.timeline-container .event {
+  flex: 1 0 21%;
+  min-width: 300px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.timeline-container .event:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+.timeline-container .event .date {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.timeline-container .event .detail {
+  font-size: 0.9em;
+  color: #666;
+}
+
 .marcas .marca {
   display: flex;
   flex-wrap: wrap;
@@ -127,21 +202,24 @@ footer {
   max-width: 100%;
   flex: 0 1 auto;
   margin: 20px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .marcas .marca .info-marca {
   display: block;
+  margin: 10px;
 }
 .marcas .marca .info-marca .marca-nombre {
   font-weight: bold;
 }
-.marcas .marca .info-marca .marca-nombre, .marcas .marca .info-marca .resto {
+.marcas .marca .info-marca .marca-nombre .resto {
   display: block;
-  margin: 5px 0;
+  margin: 10px;
 }
 .marcas .marca .info-marca .fundador-creador {
   display: flex;
   align-items: baseline;
-  margin: 5px 0;
 }
 .marcas .marca .info-marca .fundador-creador .creador {
   margin-left: 5px;
@@ -153,13 +231,15 @@ footer {
     align-items: flex-start;
   }
   .marcas .marca img {
-    width: auto;
-    max-width: 50%;
+    width: 30%;
     margin-right: 20px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
   }
   .marcas .marca .info-marca {
     flex-grow: 1;
-    width: 50%;
+    width: 60%;
     margin: 20px;
   }
 }
@@ -167,16 +247,16 @@ footer {
 .img-nosotros {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1;
-  grid-gap: 10px;
+  grid-gap: 5px;
 }
 .img-nosotros img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: auto;
   object-fit: cover;
   padding: 5px;
-  margin: 5px;
-  border-radius: 5%;
+  margin: 5px auto;
+  border-radius: 15px;
+  justify-self: center;
 }
 @media (min-width: 600px) {
   .img-nosotros {
@@ -184,6 +264,8 @@ footer {
   }
   .img-nosotros img {
     width: 100%;
+    height: auto;
+    margin: 5px 0;
   }
 }
 @media (min-width: 1024px) {
@@ -194,7 +276,50 @@ footer {
     width: 100%;
     height: 400px;
     object-fit: cover;
+    margin: 10px 0;
   }
+}
+
+.form-contacto form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-contacto form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.form-contacto form input,
+.form-contacto form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-contacto form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.form-contacto form button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  border: 15px;
+  border-radius: 4px;
+  background-color: #17415e;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+.form-contacto form button:hover {
+  background-color: #0d2535;
+  box-shadow: 8px 8px 16px rgba(255, 0, 0, 0.2);
 }
 
 /*# sourceMappingURL=style.css.map */

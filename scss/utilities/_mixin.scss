@@ -2,95 +2,194 @@
 
 @import "variables";
 
-//mixin para page marcas
-@mixin flex-para-marcas {
+// Mixin para page historia
+@mixin flex-para-historia {
+  .timeline-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px; 
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .event {
+    flex: 1 0 21%;
+    min-width: 300px; 
+    background-color: $background-color-form;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    &:hover {
+      transform: scale(1.10);
+      z-index: 2;
+    }
+    .date {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .detail {
+      font-size: 0.9em;
+      color: #666;
+    }
+  }
+}
+
+// Mixin para page marcas
+@mixin flex-para-marcas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 1 auto;
+    margin: 20px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .info-marca {
+    display: block;
+    margin: 10px;
+
+    .marca-nombre {
+      font-weight: bold;
+    }
+
+    .marca-nombre .resto {
+      display: block;
+      margin: 10px;
+    }
+
+    .fundador-creador {
+      display: flex;
+      align-items: baseline;
+
+      .creador {
+        margin-left: 5px;
+        font-style: italic;
+      }
+    }
+  }
+
+  // mq para desktop
+  @media (min-width: $mq-desktop) {
+    flex-direction: row;
     align-items: flex-start;
-  
+
     img {
-        width: 100%;
-        max-width: 100%; 
-        flex: 0 1 auto;
-        margin: 20px; 
-   
+      width: 30%;
+      margin-right: 20px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
     }
 
     .info-marca {
-      display: block;
-  
-      .marca-nombre{
-        font-weight: bold;
-      }
-      .marca-nombre, .resto {
-          display: block;
-          margin: 5px 0;
-      }
-  
-      .fundador-creador {
-          display: flex;
-          align-items: baseline;
-          margin: 5px 0;
-
-  
-          .creador {
-              margin-left: 5px;
-              font-style: italic;
-          }
-      }
-  }
-
-    // media queris desde desktop
-    @media (min-width: $mq-desktop) {
-        flex-direction: row;
-        align-items: flex-start; 
-
-        img {
-            width: auto;
-            max-width: 50%; 
-            margin-right: 20px;
-        }
-
-        .info-marca {
-            flex-grow: 1;
-            width: 50%; 
-            margin: 20px;
-        }
+      flex-grow: 1;
+      width: 60%;
+      margin: 20px;
     }
+  }
 }
-
 
 //mixin para page nosotros
 @mixin grid-para-nosotros {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1;
-  grid-gap: 10px;
+  grid-template-columns: 1fr; // Una columna para móviles
+  grid-gap: 5px; // Espacio entre filas y columnas
+  
+  p {
+    
+  }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: auto; // Usa 'auto' para mantener la proporción original
     object-fit: cover;
     padding: 5px;
-    margin: 5px;
-    border-radius: 5%;
+    margin: 5px auto; // Centra las imágenes horizontalmente con margen
+    border-radius: 15px;
+    justify-self: center;
   }
 
   @media (min-width: $mq-mediano) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); // Dos columnas para tablets
 
     img {
-      width: 100%;
+      width: 100%; // Utiliza el ancho completo de la celda de la cuadrícula
+      height: auto; // Ajusta para mantener la proporción
+      margin: 5px 0; // Margen superior e inferior para separar imágenes
     }
   }
 
   @media (min-width: $mq-desktop) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); // Cuatro columnas para escritorio
 
     img {
+      width: 100%; // Aprovecha todo el espacio horizontal
+      height: 400px; // Altura fija para todas las imágenes
+      object-fit: cover; // Asegura que la imagen cubra el espacio sin deformarse
+      margin: 10px 0; // Aumenta el margen entre imágenes
+    }
+  }
+}
+
+//mixin para page contacto
+@mixin flex-para-contacto {
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    background-color: $background-color-form;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    label {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
       width: 100%;
-      height: 400px;
-      object-fit: cover;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    button {
+      align-self: flex-end;
+      padding: 10px 20px;
+      border: 15px;
+      border-radius: 4px;
+      background-color: $button-background-color;
+      color: $button-text-color;
+      cursor: pointer;
+      transition: background-color 0.4s, box-shadow 0.4s;
+
+      &:hover {
+        background-color: darken($button-background-color, 10%);
+        box-shadow: 8px 8px 16px rgba(255, 0, 0, 0.2);
+      }
     }
   }
 }
