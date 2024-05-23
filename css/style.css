@@ -189,7 +189,6 @@ footer {
 }
 .timeline-container .event .detail {
   font-size: 0.9em;
-  color: #666;
 }
 
 .marcas .marca {
@@ -201,8 +200,8 @@ footer {
   width: 100%;
   max-width: 100%;
   flex: 0 1 auto;
-  margin: 20px;
-  height: 200px;
+  margin: 15px;
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
 }
